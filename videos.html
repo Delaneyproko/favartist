@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+  font-family: Arial;
+  background-image: url("images/background.jpg");
+  background-attachment: fixed;
+}
+
+.header {
+  text-align: center;
+  padding: 32px;
+  color: white;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 25px;
+  width: 100%;
+  margin: 0;
+}
+
+.bookmarks {
+	float: left;
+	width: 12%;
+	margin: 10em 2em 0 3em;
+	position: -webkit-sticky;
+	position: sticky;
+	top: 100px;
+}
+.bookmarks ul {
+	list-style: none;
+	width: 95%;
+	margin: 2em 0 0;
+}
+.bookmarks ul li {
+	margin: 0 1em 3px 0;
+	transition: all .5s;
+}
+.bookmarks ul li a {
+	padding: .5em .5em;
+	display: block;
+	background-color: #404040;
+	border: 1px solid white;
+	color: white;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	font-weight: bold;
+	text-decoration: none;
+	border-radius: 5px;
+	margin-left: 0;
+	transition: all .5s;
+}
+.bookmarks ul li a:hover {
+	background-color: black;
+	color: rgba(194, 41, 112, 0.671);
+	border: 1px solid black;
+}
+.bookmarks ul li:hover {
+	margin: 0 0 3px 1em;
+}
+
+
+#myBtn {
+	display: none; /* Hidden by default */
+	width: 88%;
+	z-index: 99; /* Make sure it does not overlap */
+	border: 1px solid white;
+	outline: none; /* Remove outline */
+	background-color: #404040; /* Set a background color */
+	color: white; /* Text color */
+	font-weight: bold;
+	cursor: pointer; /* Add a mouse pointer on hover */
+	padding: .5em .5em;
+	margin: 0 1em 3px 0;
+	text-align: left;
+	transition: all .5s;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	font-size: 100%;
+	border-radius: 5px;
+}
+#myBtn:hover {
+	background-color: black;
+	color: rgba(194, 41, 112, 0.671);
+	margin: 0 0 3px 1em;
+	border: 1px solid black;
+}
+#cornerBtn {
+	display: none; /* Hidden by default */
+	position: fixed;
+	left: 5px;
+	bottom: 150px;
+	z-index: 99; /* Make sure it does not overlap */
+	border: 1px solid black;
+	outline: none; /* Remove outline */
+	font-weight: bold;
+	cursor: pointer; /* Add a mouse pointer on hover */
+	padding: .5em .5em;
+	margin: 0 1em 3px 0;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	font-size: 100%;
+	border-radius: 5px;
+	background-color: rgba(0,0,0,.6);
+	color: white;
+	transition: all .5s;
+}
+#cornerBtn:hover {
+	background-color: black;
+	color: rgba(194, 41, 112, 0.671);
+	border: 1px solid black;
+}
+
+
+
+section {
+  float: left;
+	width: 75%;
+	margin: 1em 1em 2em 0;
+}
+article {
+  width: 75%;
+	margin: 0 auto 2em;
+	padding: 2em 1em;
+	background-color: black;
+  border-radius: 10px;
+}
+article h4 {
+  color: white;
+  font-size: 125%;
+  margin: 0 .5em 10px;
+}
+
+.videowrapper {
+  position: relative;
+  margin: 0 auto;
+  height: 0;
+  padding-top: 25px;
+  padding-bottom: 50%;
+  border: 3px ridge white;
+}
+.videowrapper iframe{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.caption p {
+	margin: 2em;
+	line-height: 1.5;
+	font-weight: bold;
+  color: white;
+}
+
+
+footer {
+  clear: both;
+  color: lightgray;
+  margin-top: 5px;
+  padding: 3em;
+  background-color: black;
+  text-align: center;
+  font: 100%;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media (max-width: 800px) {
+  body, main {
+		width: 100%;
+		font-size: 85%;
+	}
+  header h1 {
+    font-size: 120%;
+  }
+  section {
+		float: none;
+		width: 100%;
+		margin: 1em 0 2em;
+	}
+	.bookmarks {
+		display: none;
+	}
+  article, div {
+		width: 100%;
+		margin: 0 0 2em;
+		padding: 2em 0;
+		border-radius: 0;
+	}
+	.videowrapper {
+		border: 0;
+		width: 100%;
+	}
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+  
+}
+</style>
+</head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<body>
+
+<!-- Header -->
+<div class="header">
+  <h1>Chris Brown</h1>
+  <p>Singer-songwriter</p>
+</div>
+
+<nav class="bookmarks">
+  <ul>
+    <li><a href="#vid1">Video 1</a></li>
+    <li><a href="#vid2">Video 2</a></li>
+    <li><a href="#vid3">Video 3</a></li>
+    <li><a href="#vid4">Video 4</a></li>
+    <li><a href="#vid5">Video 5</a></li>
+    <li><a href="#vid6">Video 6</a></li>
+  </ul>
+  <button onclick="topFunction()" id="myBtn" title="Go to top">Return To Top</button>
+</nav>
+
+<script>
+  // When the user scrolls down 20px from the top of the document, show the button
+  window.onscroll = function() {scrollFunction()};
+  
+  function scrollFunction() {
+    if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+      document.getElementById("myBtn").style.display = "block";
+    } else {
+      document.getElementById("myBtn").style.display = "none";
+    }
+  }
+  
+  // When the user clicks on the button, scroll to the top of the document
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+</script>
+
+<section>
+    <article id="vid1">
+        <h4>Video 1: Forever Music Video</h4>
+        <div class="videowrapper">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/5sMKX22BHeE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="caption">
+          <p>
+            "Forever" was realeased in 2009. It is popularly known from the tv show "The Office" when two of the main characters, Jim and Pam, got married.
+          </p>
+        </div>
+    </article>
+
+    <article id="vid2">
+      <h4>Video 2: Undecided Music Video</h4>
+      <div class="videowrapper">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/y6fThXQPT6I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="caption">
+        <p>
+            "Undecided" was released in 2019. It is on one of Chris Brown's most popular albums called "Indigo".
+        </p>
+      </div>
+    </article>
+
+    <article id="vid3">
+      <h4>Video 3: Yeah 3x Music Video</h4>
+      <div class="videowrapper">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/3mC2ixOAivA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="caption">
+        <p>
+            "Yeah 3x" was released in 2010. The music video show how Chris brown is not just a musician, he is an amazing dancer and performer too.
+        </p>
+      </div>
+    </article>
+
+    <article id="vid4">
+      <h4>Video 4: Fine China Music Video</h4>
+      <div class="videowrapper">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/iGs1gODLiSQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="caption">
+        <p>
+          "Fine China" was realeased in 2014 on another one of Chris Brown's award winning albums, "X".
+        </p>
+      </div>
+    </article>
+
+    <article id="vid5">
+      <h4>Video 5: Five More Hours Music Video</h4>
+      <div class="videowrapper">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/j3CaHeakZF4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="caption">
+        <p>
+          "Five More Hours" was realeased in 2015 and was a collaboration with Deorro.
+        </p>
+      </div>
+    </article>
+
+    <article id="vid6">
+      <h4>Video 6: With You Music Video</h4>
+      <div class="videowrapper">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/nmjdaBaZe8Y?list=RDEM9inqspo5JTQrtS0enC4HpA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="caption">
+        <p>
+          "With You" is a very popular song realeased in 2007 on the album "Exclusive".
+        </p>
+      </div>
+    </article>
+
+
+</section>
+
+  <footer>
+		<p>
+			<script>
+				var today = new Date();
+				document.write("&copy;&nbsp;");
+				document.write(today.getFullYear());
+				document.write(" Copyright ~ Delaney Proko Productions")
+			</script>
+		</p>
+	</footer>
+</body>
+</html>
+
+
